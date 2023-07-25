@@ -9,8 +9,39 @@
 </head>
 
 <body>
-    <main>
-        <h1>Quiz</h1>
+    <!-- Página de Login -->
+    <div class="paginal-inicial">
+        <h2>Quiz Porto</h2>
+        <p class="description-quiz">
+            Neste quiz vamos abordar perguntas e respostas sobre 
+            áreas da Porto seguro.
+        </p> 
+        
+        <div class="tema-cores">
+            <label for="theme-switch">Modo Black</label>
+            <input type="checkbox" id="theme-switch" onchange="toggleTheme()">
+        </div>
+        <form class="form-container" action="#" method="post">
+            <label for="name">Nome:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="tema">Escolha o Tema:</label>
+            <select id="tema" name="tema">
+                <option value="light">Porto Bank</option>
+                <option value="dark">Porto Saúde</option>
+                <option value="blue">Porto Auto</option>
+            </select>
+            
+            
+        </form>
+    </div>
+
+    <div class="start-button-container">
+        <input type="button" value="Iniciar" onclick="iniciar()">
+    </div>
+</div>
+
+    <script src="./script.js"></script>
 
         <!-- PERGUNTAS -->
         <!-- TEMA 1 -->
