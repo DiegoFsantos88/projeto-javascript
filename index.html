@@ -1,266 +1,291 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Porto Quiz</title>
     <link rel="stylesheet" href="./styles.css">
 </head>
-
 <body>
+    <main>
     <!-- Página de Login -->
-    <div class="paginal-inicial">
-        <h2>Quiz Porto</h2>
+    <section class="login">
+        <h2 class="name-quiz">Quiz Porto</h2>
         <p class="description-quiz">
-            Neste quiz vamos abordar perguntas e respostas sobre 
+            Neste quiz vamos abordar perguntas e respostas sobre
             áreas da Porto seguro.
-        </p> 
-        
+        </p>
+    
         <div class="tema-cores">
             <label for="theme-switch">Modo Black</label>
             <input type="checkbox" id="theme-switch" onchange="toggleTheme()">
         </div>
+
         <form class="form-container" action="#" method="post">
             <label for="name">Nome:</label>
             <input type="text" id="name" name="name" required>
+        </form>
 
+        <form class="form-container">
             <label for="tema">Escolha o Tema:</label>
             <select id="tema" name="tema">
                 <option value="light">Porto Bank</option>
                 <option value="dark">Porto Saúde</option>
                 <option value="blue">Porto Auto</option>
             </select>
-            
-            
         </form>
-    </div>
+        
+    
+        <div class="btn">
+            <input type="button" value="Iniciar" onclick="iniciar()">
+        </div>
+    </section>
+    
 
-    <div class="start-button-container">
-        <input type="button" value="Iniciar" onclick="iniciar()">
-    </div>
-</div>
+    <!-- PERGUNTAS -->
+    <!-- TEMA 1 -->
 
-    <script src="./script.js"></script>
-
-        <!-- PERGUNTAS -->
-        <!-- TEMA 1 -->
-        <h2>1. Pergunta</h2>
-        <ul>
-            <li><label><input type="radio" name="answer" value="0"></label>resposta</li>
-            <li><label><input type="radio" name="answer" value="1"></label>resposta</li>
-            <li><label><input type="radio" name="answer" value="2"></label>resposta</li>
-            <li><label><input type="radio" name="answer" value="3"></label>resposta</li>
-        </ul>
+    <section class="perguntas">
+        <div class="tema1">
+            <h1>Tema 1</h1>
+            <h2>1. Pergunta</h2>
+            <ul>
+                <li><label><input type="radio" name="answer" value="0"></label>resposta</li>
+                <li><label><input type="radio" name="answer" value="1"></label>resposta</li>
+                <li><label><input type="radio" name="answer" value="2"></label>resposta</li>
+                <li><label><input type="radio" name="answer" value="3"></label>resposta</li>
+            </ul>
             <h2>2. Pergunta</h2>
-        <ul>
-            <li><label><input type="radio" name="answer" value="0"></label>resposta</li>
-            <li><label><input type="radio" name="answer" value="1"></label>resposta</li>
-            <li><label><input type="radio" name="answer" value="2"></label>resposta</li>
-            <li><label><input type="radio" name="answer" value="3"></label>resposta</li>
-        </ul>
+            <ul>
+                <li><label><input type="radio" name="answer" value="0"></label>resposta</li>
+                <li><label><input type="radio" name="answer" value="1"></label>resposta</li>
+                <li><label><input type="radio" name="answer" value="2"></label>resposta</li>
+                <li><label><input type="radio" name="answer" value="3"></label>resposta</li>
+            </ul>
             <h2>3. Pergunta</h2>
-        <ul>
-            <li><label><input type="radio" name="answer" value="0"></label>resposta</li>
-            <li><label><input type="radio" name="answer" value="1"></label>resposta</li>
-            <li><label><input type="radio" name="answer" value="2"></label>resposta</li>
-            <li><label><input type="radio" name="answer" value="3"></label>resposta</li>
-        </ul>
+            <ul>
+                <li><label><input type="radio" name="answer" value="0"></label>resposta</li>
+                <li><label><input type="radio" name="answer" value="1"></label>resposta</li>
+                <li><label><input type="radio" name="answer" value="2"></label>resposta</li>
+                <li><label><input type="radio" name="answer" value="3"></label>resposta</li>
+            </ul>
             <h2>4. Pergunta</h2>
-        <ul>
-            <li><label><input type="radio" name="answer" value="0"></label>resposta</li>
-            <li><label><input type="radio" name="answer" value="1"></label>resposta</li>
-            <li><label><input type="radio" name="answer" value="2"></label>resposta</li>
-            <li><label><input type="radio" name="answer" value="3"></label>resposta</li>
-        </ul>
-        <h2>5. Pergunta</h2>
-        <ul>
-            <li><label><input type="radio" name="answer" value="0"></label>resposta</li>
-            <li><label><input type="radio" name="answer" value="1"></label>resposta</li>
-            <li><label><input type="radio" name="answer" value="2"></label>resposta</li>
-            <li><label><input type="radio" name="answer" value="3"></label>resposta</li>
-        </ul>
-        <h2>6. Pergunta</h2>
-        <ul>
-            <li><label><input type="radio" name="answer" value="0"></label>resposta</li>
-            <li><label><input type="radio" name="answer" value="1"></label>resposta</li>
-            <li><label><input type="radio" name="answer" value="2"></label>resposta</li>
-            <li><label><input type="radio" name="answer" value="3"></label>resposta</li>
-        </ul>
-        <h2>7. Pergunta</h2>
-        <ul>
-            <li><label><input type="radio" name="answer" value="0"></label>resposta</li>
-            <li><label><input type="radio" name="answer" value="1"></label>resposta</li>
-            <li><label><input type="radio" name="answer" value="2"></label>resposta</li>
-            <li><label><input type="radio" name="answer" value="3"></label>resposta</li>
-        </ul>
-        <h2>8. Pergunta</h2>
-        <ul>
-            <li><label><input type="radio" name="answer" value="0"></label>resposta</li>
-            <li><label><input type="radio" name="answer" value="1"></label>resposta</li>
-            <li><label><input type="radio" name="answer" value="2"></label>resposta</li>
-            <li><label><input type="radio" name="answer" value="3"></label>resposta</li>
-        </ul>
-        <h2>9. Pergunta</h2>
-        <ul>
-            <li><label><input type="radio" name="answer" value="0"></label>resposta</li>
-            <li><label><input type="radio" name="answer" value="1"></label>resposta</li>
-            <li><label><input type="radio" name="answer" value="2"></label>resposta</li>
-            <li><label><input type="radio" name="answer" value="3"></label>resposta</li>
-        </ul>
-        <h2>10. Pergunta</h2>
-        <ul>
-            <li><label><input type="radio" name="answer" value="0"></label>resposta</li>
-            <li><label><input type="radio" name="answer" value="1"></label>resposta</li>
-            <li><label><input type="radio" name="answer" value="2"></label>resposta</li>
-            <li><label><input type="radio" name="answer" value="3"></label>resposta</li>
-        </ul>
-        <button type="submit">Concluir</button>
+            <ul>
+                <li><label><input type="radio" name="answer" value="0"></label>resposta</li>
+                <li><label><input type="radio" name="answer" value="1"></label>resposta</li>
+                <li><label><input type="radio" name="answer" value="2"></label>resposta</li>
+                <li><label><input type="radio" name="answer" value="3"></label>resposta</li>
+            </ul>
+            <h2>5. Pergunta</h2>
+            <ul>
+                <li><label><input type="radio" name="answer" value="0"></label>resposta</li>
+                <li><label><input type="radio" name="answer" value="1"></label>resposta</li>
+                <li><label><input type="radio" name="answer" value="2"></label>resposta</li>
+                <li><label><input type="radio" name="answer" value="3"></label>resposta</li>
+            </ul>
+            <h2>6. Pergunta</h2>
+            <ul>
+                <li><label><input type="radio" name="answer" value="0"></label>resposta</li>
+                <li><label><input type="radio" name="answer" value="1"></label>resposta</li>
+                <li><label><input type="radio" name="answer" value="2"></label>resposta</li>
+                <li><label><input type="radio" name="answer" value="3"></label>resposta</li>
+            </ul>
+            <h2>7. Pergunta</h2>
+            <ul>
+                <li><label><input type="radio" name="answer" value="0"></label>resposta</li>
+                <li><label><input type="radio" name="answer" value="1"></label>resposta</li>
+                <li><label><input type="radio" name="answer" value="2"></label>resposta</li>
+                <li><label><input type="radio" name="answer" value="3"></label>resposta</li>
+            </ul>
+            <h2>8. Pergunta</h2>
+            <ul>
+                <li><label><input type="radio" name="answer" value="0"></label>resposta</li>
+                <li><label><input type="radio" name="answer" value="1"></label>resposta</li>
+                <li><label><input type="radio" name="answer" value="2"></label>resposta</li>
+                <li><label><input type="radio" name="answer" value="3"></label>resposta</li>
+            </ul>
+            <h2>9. Pergunta</h2>
+            <ul>
+                <li><label><input type="radio" name="answer" value="0"></label>resposta</li>
+                <li><label><input type="radio" name="answer" value="1"></label>resposta</li>
+                <li><label><input type="radio" name="answer" value="2"></label>resposta</li>
+                <li><label><input type="radio" name="answer" value="3"></label>resposta</li>
+            </ul>
+            <h2>10. Pergunta</h2>
+            <ul>
+                <li><label><input type="radio" name="answer" value="0"></label>resposta</li>
+                <li><label><input type="radio" name="answer" value="1"></label>resposta</li>
+                <li><label><input type="radio" name="answer" value="2"></label>resposta</li>
+                <li><label><input type="radio" name="answer" value="3"></label>resposta</li>
+            </ul>
+            <div class="botoes-container">
+                <button type="submit">Concluir</button>
+                <button type="reset">Reiniciar</button>
+            </div>
+            
+        </div>
+
+
         <!-- TEMA 2 -->
-        <h2>1. Pergunta</h2>
-        <ul>
-            <li><label><input type="radio" name="answer" value="0"></label>resposta</li>
-            <li><label><input type="radio" name="answer" value="1"></label>resposta</li>
-            <li><label><input type="radio" name="answer" value="2"></label>resposta</li>
-            <li><label><input type="radio" name="answer" value="3"></label>resposta</li>
-        </ul>
+        <div class="tema2">
+            <h1>Tema 2</h1>
+            <h2>1. Pergunta</h2>
+            <ul>
+                <li><label><input type="radio" name="answer" value="0"></label>resposta</li>
+                <li><label><input type="radio" name="answer" value="1"></label>resposta</li>
+                <li><label><input type="radio" name="answer" value="2"></label>resposta</li>
+                <li><label><input type="radio" name="answer" value="3"></label>resposta</li>
+            </ul>
             <h2>2. Pergunta</h2>
-        <ul>
-            <li><label><input type="radio" name="answer" value="0"></label>resposta</li>
-            <li><label><input type="radio" name="answer" value="1"></label>resposta</li>
-            <li><label><input type="radio" name="answer" value="2"></label>resposta</li>
-            <li><label><input type="radio" name="answer" value="3"></label>resposta</li>
-        </ul>
+            <ul>
+                <li><label><input type="radio" name="answer" value="0"></label>resposta</li>
+                <li><label><input type="radio" name="answer" value="1"></label>resposta</li>
+                <li><label><input type="radio" name="answer" value="2"></label>resposta</li>
+                <li><label><input type="radio" name="answer" value="3"></label>resposta</li>
+            </ul>
             <h2>3. Pergunta</h2>
-        <ul>
-            <li><label><input type="radio" name="answer" value="0"></label>resposta</li>
-            <li><label><input type="radio" name="answer" value="1"></label>resposta</li>
-            <li><label><input type="radio" name="answer" value="2"></label>resposta</li>
-            <li><label><input type="radio" name="answer" value="3"></label>resposta</li>
-        </ul>
+            <ul>
+                <li><label><input type="radio" name="answer" value="0"></label>resposta</li>
+                <li><label><input type="radio" name="answer" value="1"></label>resposta</li>
+                <li><label><input type="radio" name="answer" value="2"></label>resposta</li>
+                <li><label><input type="radio" name="answer" value="3"></label>resposta</li>
+            </ul>
             <h2>4. Pergunta</h2>
-        <ul>
-            <li><label><input type="radio" name="answer" value="0"></label>resposta</li>
-            <li><label><input type="radio" name="answer" value="1"></label>resposta</li>
-            <li><label><input type="radio" name="answer" value="2"></label>resposta</li>
-            <li><label><input type="radio" name="answer" value="3"></label>resposta</li>
-        </ul>
-        <h2>5. Pergunta</h2>
-        <ul>
-            <li><label><input type="radio" name="answer" value="0"></label>resposta</li>
-            <li><label><input type="radio" name="answer" value="1"></label>resposta</li>
-            <li><label><input type="radio" name="answer" value="2"></label>resposta</li>
-            <li><label><input type="radio" name="answer" value="3"></label>resposta</li>
-        </ul>
-        <h2>6. Pergunta</h2>
-        <ul>
-            <li><label><input type="radio" name="answer" value="0"></label>resposta</li>
-            <li><label><input type="radio" name="answer" value="1"></label>resposta</li>
-            <li><label><input type="radio" name="answer" value="2"></label>resposta</li>
-            <li><label><input type="radio" name="answer" value="3"></label>resposta</li>
-        </ul>
-        <h2>7. Pergunta</h2>
-        <ul>
-            <li><label><input type="radio" name="answer" value="0"></label>resposta</li>
-            <li><label><input type="radio" name="answer" value="1"></label>resposta</li>
-            <li><label><input type="radio" name="answer" value="2"></label>resposta</li>
-            <li><label><input type="radio" name="answer" value="3"></label>resposta</li>
-        </ul>
-        <h2>8. Pergunta</h2>
-        <ul>
-            <li><label><input type="radio" name="answer" value="0"></label>resposta</li>
-            <li><label><input type="radio" name="answer" value="1"></label>resposta</li>
-            <li><label><input type="radio" name="answer" value="2"></label>resposta</li>
-            <li><label><input type="radio" name="answer" value="3"></label>resposta</li>
-        </ul>
-        <h2>9. Pergunta</h2>
-        <ul>
-            <li><label><input type="radio" name="answer" value="0"></label>resposta</li>
-            <li><label><input type="radio" name="answer" value="1"></label>resposta</li>
-            <li><label><input type="radio" name="answer" value="2"></label>resposta</li>
-            <li><label><input type="radio" name="answer" value="3"></label>resposta</li>
-        </ul>
-        <h2>10. Pergunta</h2>
-        <ul>
-            <li><label><input type="radio" name="answer" value="0"></label>resposta</li>
-            <li><label><input type="radio" name="answer" value="1"></label>resposta</li>
-            <li><label><input type="radio" name="answer" value="2"></label>resposta</li>
-            <li><label><input type="radio" name="answer" value="3"></label>resposta</li>
-        </ul>
-        <button type="submit">Concluir</button>
-            <!-- TEMA 3 -->
-        <h2>1. Pergunta</h2>
-        <ul>
-            <li><label><input type="radio" name="answer" value="0"></label>resposta</li>
-            <li><label><input type="radio" name="answer" value="1"></label>resposta</li>
-            <li><label><input type="radio" name="answer" value="2"></label>resposta</li>
-            <li><label><input type="radio" name="answer" value="3"></label>resposta</li>
-        </ul>
+            <ul>
+                <li><label><input type="radio" name="answer" value="0"></label>resposta</li>
+                <li><label><input type="radio" name="answer" value="1"></label>resposta</li>
+                <li><label><input type="radio" name="answer" value="2"></label>resposta</li>
+                <li><label><input type="radio" name="answer" value="3"></label>resposta</li>
+            </ul>
+            <h2>5. Pergunta</h2>
+            <ul>
+                <li><label><input type="radio" name="answer" value="0"></label>resposta</li>
+                <li><label><input type="radio" name="answer" value="1"></label>resposta</li>
+                <li><label><input type="radio" name="answer" value="2"></label>resposta</li>
+                <li><label><input type="radio" name="answer" value="3"></label>resposta</li>
+            </ul>
+            <h2>6. Pergunta</h2>
+            <ul>
+                <li><label><input type="radio" name="answer" value="0"></label>resposta</li>
+                <li><label><input type="radio" name="answer" value="1"></label>resposta</li>
+                <li><label><input type="radio" name="answer" value="2"></label>resposta</li>
+                <li><label><input type="radio" name="answer" value="3"></label>resposta</li>
+            </ul>
+            <h2>7. Pergunta</h2>
+            <ul>
+                <li><label><input type="radio" name="answer" value="0"></label>resposta</li>
+                <li><label><input type="radio" name="answer" value="1"></label>resposta</li>
+                <li><label><input type="radio" name="answer" value="2"></label>resposta</li>
+                <li><label><input type="radio" name="answer" value="3"></label>resposta</li>
+            </ul>
+            <h2>8. Pergunta</h2>
+            <ul>
+                <li><label><input type="radio" name="answer" value="0"></label>resposta</li>
+                <li><label><input type="radio" name="answer" value="1"></label>resposta</li>
+                <li><label><input type="radio" name="answer" value="2"></label>resposta</li>
+                <li><label><input type="radio" name="answer" value="3"></label>resposta</li>
+            </ul>
+            <h2>9. Pergunta</h2>
+            <ul>
+                <li><label><input type="radio" name="answer" value="0"></label>resposta</li>
+                <li><label><input type="radio" name="answer" value="1"></label>resposta</li>
+                <li><label><input type="radio" name="answer" value="2"></label>resposta</li>
+                <li><label><input type="radio" name="answer" value="3"></label>resposta</li>
+            </ul>
+            <h2>10. Pergunta</h2>
+            <ul>
+                <li><label><input type="radio" name="answer" value="0"></label>resposta</li>
+                <li><label><input type="radio" name="answer" value="1"></label>resposta</li>
+                <li><label><input type="radio" name="answer" value="2"></label>resposta</li>
+                <li><label><input type="radio" name="answer" value="3"></label>resposta</li>
+            </ul>
+            <div class="botoes-container">
+                <button type="submit">Concluir</button>
+                <button type="reset">Reiniciar</button>
+            </div>
+        </div>
+
+        <!-- TEMA 3 -->
+        <div class="tema3">
+            <h1>Tema 3</h1>
+            <h2>1. Pergunta</h2>
+            <ul>
+                <li><label><input type="radio" name="answer" value="0"></label>resposta</li>
+                <li><label><input type="radio" name="answer" value="1"></label>resposta</li>
+                <li><label><input type="radio" name="answer" value="2"></label>resposta</li>
+                <li><label><input type="radio" name="answer" value="3"></label>resposta</li>
+            </ul>
             <h2>2. Pergunta</h2>
-        <ul>
-            <li><label><input type="radio" name="answer" value="0"></label>resposta</li>
-            <li><label><input type="radio" name="answer" value="1"></label>resposta</li>
-            <li><label><input type="radio" name="answer" value="2"></label>resposta</li>
-            <li><label><input type="radio" name="answer" value="3"></label>resposta</li>
-        </ul>
+            <ul>
+                <li><label><input type="radio" name="answer" value="0"></label>resposta</li>
+                <li><label><input type="radio" name="answer" value="1"></label>resposta</li>
+                <li><label><input type="radio" name="answer" value="2"></label>resposta</li>
+                <li><label><input type="radio" name="answer" value="3"></label>resposta</li>
+            </ul>
             <h2>3. Pergunta</h2>
-        <ul>
-            <li><label><input type="radio" name="answer" value="0"></label>resposta</li>
-            <li><label><input type="radio" name="answer" value="1"></label>resposta</li>
-            <li><label><input type="radio" name="answer" value="2"></label>resposta</li>
-            <li><label><input type="radio" name="answer" value="3"></label>resposta</li>
-        </ul>
+            <ul>
+                <li><label><input type="radio" name="answer" value="0"></label>resposta</li>
+                <li><label><input type="radio" name="answer" value="1"></label>resposta</li>
+                <li><label><input type="radio" name="answer" value="2"></label>resposta</li>
+                <li><label><input type="radio" name="answer" value="3"></label>resposta</li>
+            </ul>
             <h2>4. Pergunta</h2>
-        <ul>
-            <li><label><input type="radio" name="answer" value="0"></label>resposta</li>
-            <li><label><input type="radio" name="answer" value="1"></label>resposta</li>
-            <li><label><input type="radio" name="answer" value="2"></label>resposta</li>
-            <li><label><input type="radio" name="answer" value="3"></label>resposta</li>
-        </ul>
-        <h2>5. Pergunta</h2>
-        <ul>
-            <li><label><input type="radio" name="answer" value="0"></label>resposta</li>
-            <li><label><input type="radio" name="answer" value="1"></label>resposta</li>
-            <li><label><input type="radio" name="answer" value="2"></label>resposta</li>
-            <li><label><input type="radio" name="answer" value="3"></label>resposta</li>
-        </ul>
-        <h2>6. Pergunta</h2>
-        <ul>
-            <li><label><input type="radio" name="answer" value="0"></label>resposta</li>
-            <li><label><input type="radio" name="answer" value="1"></label>resposta</li>
-            <li><label><input type="radio" name="answer" value="2"></label>resposta</li>
-            <li><label><input type="radio" name="answer" value="3"></label>resposta</li>
-        </ul>
-        <h2>7. Pergunta</h2>
-        <ul>
-            <li><label><input type="radio" name="answer" value="0"></label>resposta</li>
-            <li><label><input type="radio" name="answer" value="1"></label>resposta</li>
-            <li><label><input type="radio" name="answer" value="2"></label>resposta</li>
-            <li><label><input type="radio" name="answer" value="3"></label>resposta</li>
-        </ul>
-        <h2>8. Pergunta</h2>
-        <ul>
-            <li><label><input type="radio" name="answer" value="0"></label>resposta</li>
-            <li><label><input type="radio" name="answer" value="1"></label>resposta</li>
-            <li><label><input type="radio" name="answer" value="2"></label>resposta</li>
-            <li><label><input type="radio" name="answer" value="3"></label>resposta</li>
-        </ul>
-        <h2>9. Pergunta</h2>
-        <ul>
-            <li><label><input type="radio" name="answer" value="0"></label>resposta</li>
-            <li><label><input type="radio" name="answer" value="1"></label>resposta</li>
-            <li><label><input type="radio" name="answer" value="2"></label>resposta</li>
-            <li><label><input type="radio" name="answer" value="3"></label>resposta</li>
-        </ul>
-        <h2>10. Pergunta</h2>
-        <ul>
-            <li><label><input type="radio" name="answer" value="0"></label>resposta</li>
-            <li><label><input type="radio" name="answer" value="1"></label>resposta</li>
-            <li><label><input type="radio" name="answer" value="2"></label>resposta</li>
-            <li><label><input type="radio" name="answer" value="3"></label>resposta</li>
-        </ul>
-        <button type="submit">Concluir</button>
-        <!-- INICIO TABLE RESULTADOS -->
+            <ul>
+                <li><label><input type="radio" name="answer" value="0"></label>resposta</li>
+                <li><label><input type="radio" name="answer" value="1"></label>resposta</li>
+                <li><label><input type="radio" name="answer" value="2"></label>resposta</li>
+                <li><label><input type="radio" name="answer" value="3"></label>resposta</li>
+            </ul>
+            <h2>5. Pergunta</h2>
+            <ul>
+                <li><label><input type="radio" name="answer" value="0"></label>resposta</li>
+                <li><label><input type="radio" name="answer" value="1"></label>resposta</li>
+                <li><label><input type="radio" name="answer" value="2"></label>resposta</li>
+                <li><label><input type="radio" name="answer" value="3"></label>resposta</li>
+            </ul>
+            <h2>6. Pergunta</h2>
+            <ul>
+                <li><label><input type="radio" name="answer" value="0"></label>resposta</li>
+                <li><label><input type="radio" name="answer" value="1"></label>resposta</li>
+                <li><label><input type="radio" name="answer" value="2"></label>resposta</li>
+                <li><label><input type="radio" name="answer" value="3"></label>resposta</li>
+            </ul>
+            <h2>7. Pergunta</h2>
+            <ul>
+                <li><label><input type="radio" name="answer" value="0"></label>resposta</li>
+                <li><label><input type="radio" name="answer" value="1"></label>resposta</li>
+                <li><label><input type="radio" name="answer" value="2"></label>resposta</li>
+                <li><label><input type="radio" name="answer" value="3"></label>resposta</li>
+            </ul>
+            <h2>8. Pergunta</h2>
+            <ul>
+                <li><label><input type="radio" name="answer" value="0"></label>resposta</li>
+                <li><label><input type="radio" name="answer" value="1"></label>resposta</li>
+                <li><label><input type="radio" name="answer" value="2"></label>resposta</li>
+                <li><label><input type="radio" name="answer" value="3"></label>resposta</li>
+            </ul>
+            <h2>9. Pergunta</h2>
+            <ul>
+                <li><label><input type="radio" name="answer" value="0"></label>resposta</li>
+                <li><label><input type="radio" name="answer" value="1"></label>resposta</li>
+                <li><label><input type="radio" name="answer" value="2"></label>resposta</li>
+                <li><label><input type="radio" name="answer" value="3"></label>resposta</li>
+            </ul>
+            <h2>10. Pergunta</h2>
+            <ul>
+                <li><label><input type="radio" name="answer" value="0"></label>resposta</li>
+                <li><label><input type="radio" name="answer" value="1"></label>resposta</li>
+                <li><label><input type="radio" name="answer" value="2"></label>resposta</li>
+                <li><label><input type="radio" name="answer" value="3"></label>resposta</li>
+            </ul>
+            <div class="botoes-container">
+                <button type="submit">Concluir</button>
+                <button type="reset">Reiniciar</button>
+            </div>
+        </div>    
+    </section>
+    <!-- INICIO TABLE RESULTADOS -->
+    <section class="resultados">
         <h2>Resultados</h2>
         <table>
             <thead>
@@ -323,12 +348,11 @@
                 </tr>
             </tbody>
         </table>
-
-
+        
         <!-- MÉDIA DE ACERTOS/ERRO -->
         <h4> Média de acertos</h4>
         <h4> Média de erros</h4>
-
+    
         <!-- CLASSIFICAÇÃO -->
         <h3>Porto Bank</h3>
         <ol>
@@ -339,7 +363,7 @@
             <li></li>
             <li></li>
         </ol>
-
+    
         <h3>Porto Saúde</h3>
         <ol>
             <li></li>
@@ -349,7 +373,7 @@
             <li></li>
             <li></li>
         </ol>
-
+    
         <h3>Porto Seguro Auto</h3>
         <ol>
             <li></li>
@@ -359,13 +383,12 @@
             <li></li>
             <li></li>
         </ol>
-
-        <a href="" target="_blank"><button>Reiniciar Quiz</button></a>
+    
+        <button>Reiniciar Quiz</button>
         
+    </section>
 
-        <script src="./script.js"></script>
+    <script src="./script.js"></script>
     </main>
 </body>
-
-
 </html>
