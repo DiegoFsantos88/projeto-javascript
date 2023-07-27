@@ -1,7 +1,7 @@
-export const portoSeguroAuto = {
+export const portoSeguroAuto = [
 
 
-questao1:{
+{
 pergunta:"O que é franquia de seguro?",
 respostaA:"Franquia de seguro é o nome dado ao mascote da garantia, um personagem simpático que representa a proteção e a segurança dos veículos seguros.",
 respostaB:"Na verdade, a franquia de seguro é um tipo de franquia de fast-food oferecida por certificados.",
@@ -10,7 +10,7 @@ respostaD:"O termo franquia, refere-se ao valor previsto em contrato que deve se
 },
 
 
-questao2:{
+{
 pergunta:"Em caso de alagamento, os veículos na garagem estão cobertos pelo Seguro Auto?",
 respostaA:"Sim, a cobertura compreensiva indeniza o segurado dos prejuízos que venha a sofrer em consequência de danos materiais.", /*respota correta*/
 respostaB:"Infelizmente, em caso de alagamento, os veículos na garagem estão cobertos apenas se você conseguir convencer os peixes a não morderem os fios do seu carro.",
@@ -19,7 +19,7 @@ respostaD:"A cobertura para alagamentos no seguro auto só é válida se o veíc
 },
 
 
-questao3:{
+{
 pergunta:"O que é a vistoria prévia veicular?",
 respostaA:"A vistoria prévia veicular é um evento secreto onde o carro é levado a uma pista de corrida para testar sua habilidade.",
 respostaB:"A vistoria prévia é a inspeção que a seguradora realiza nos veículos antes de aceitar segurá-lo.", /*respota correta*/
@@ -28,7 +28,7 @@ respostaD:"A vistoria prévia veicular é um procedimento em que um grupo de adi
 },
 
 
-questao4:{
+{
 pergunta:"É necessário fazer vistoria do carro zero km?",
 respostaA:"Sim, é necessário fazer uma vistoria completa do carro zero km para verificar se todas as peças estão montadas corretamente.",
 respostaB:"Não é necessário realizar a vistoria em casos de veículo 0 km. Nesse caso, a seguradora entende que o veículo não possui dano.", /*respota correta*/
@@ -37,7 +37,7 @@ respostaD:"A vistoria do carro zero km é opcional e fica a critério do comprad
 },
 
 
-questao5:{
+{
 pergunta:"O que é laudo veicular?",
 respostaA:"O laudo veicular é um documento no qual constam todos os pareces e dados da perícia, podendo levar à aprovação ou reprovação de um automóvel.", /*respota correta*/
 respostaB:"O laudo veicular é um documento que registra as opiniões e palpites dos mecânicos sobre o estado de um carro.",
@@ -46,7 +46,7 @@ respostaD:"O laudo veicular é um processo em que um carro é submetido a uma s�
 },
 
 
-questao6:{
+{
 pergunta:"Quais fatores interferem no valor do meu Porto Seguro Auto?",
 respostaA:"A cor do veículo influencia no valor do seguro. Algumas cores mais vibrantes, como vermelho ou amarelo.",
 respostaB:"O signo do zodíaco do proprietário do veículo pode influenciar no valor do seguro.",
@@ -55,7 +55,7 @@ respostaD:"Na hora de fazer o cálculo do seguro para seu carro, diversos fatore
 },
 
 
-questao7:{
+{
 pergunta:"Quais os locais de abrangência do Porto Seguro Auto?",
 respostaA:"A abrangência do Porto Seguro Auto é válida apenas no Brasil.",
 respostaB:"A abrangência do Porto Seguro Auto inclui somentes as capitais e municípios.",
@@ -64,7 +64,7 @@ respostaD:"O Porto Seguro Auto oferece cobertura em todo o território nacional 
 },
 
 
-questao8:{
+{
 pergunta:"Clientes Porto Seguro Auto têm benefício no mês de aniversário?",
 respostaA:"Clientes Porto Seguro Auto podem acessar a Área de Cliente, no mês de seu aniversário de nascimento, e consultar se há disponibilidade.", /*respota correta*/
 respostaB:"Durante o mês de aniversário do seguro, a Porto Seguro Auto oferece um Portal Mágico de Lavagem.", 
@@ -73,7 +73,7 @@ respostaD:"No mês de aniversário do seguro, a Porto Seguro Auto oferece aos cl
 },
 
 
-questao9:{
+{
 pergunta:"Como funciona o carro reserva?",
 respostaA:"O carro reserva é, na verdade, um carro autônomo e futurista fornecido pela Porto Seguro.", 
 respostaB:"O carro reserva oferecido pela Porto Seguro é um carro voador.",
@@ -82,7 +82,7 @@ respostaD:"O carro reserva é uma cobertura que você pode adicionar no momento 
 },
 
 
-questao10:{
+{
 pergunta:"Cristalização de para-brisas e do vidro traseiro é um diferencial no seguro da Porto?",
 respostaA:"O processo de cristalização de para-brisas envolve a aplicação de pó mágico nos vidros, tornando-os invisíveis para os raios UV.",
 respostaB:"A cristalização de para-brisas e vidros traseiros transforma os vidros do carro em verdadeiros diamantes.",
@@ -90,7 +90,7 @@ respostaC:"Quem tem Porto Seguro Auto, conta com serviços gratuitos no Centro A
 respostaD:"Após a cristalização, os para-brisas e vidros traseiros do veículo ganham poderes de teletransporte."
 } 
 
-};
+];
 
 /*Gabarito Auto
 
