@@ -7,7 +7,7 @@ const temaSelecionado = document.getElementById("tema");
 const quizContainer = document.getElementById("quizContainer");
 const login = document.getElementById("login");
 
-let temaatual = []; 
+let temaatual = []; a
 let perguntaatual = 0; 
 let score = 0; 
 
