@@ -60,3 +60,12 @@ function mostrarPerguntas() {
 
 mostrarPerguntas();
 
+const audio = document.getElementById("audio");
+audio.addEventListener("ended", function() {
+    this.currentTime = 0;
+    this.play();
+});
+audio.play();
+
+const volumeDesejado = 0.15;
+audio.volume = volumeDesejado;
