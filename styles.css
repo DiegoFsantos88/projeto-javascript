@@ -1,19 +1,9 @@
-*{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: 'Lucida Sans', sans-serif;
-    background-color:#f8f9fa;
-}
-
 
 .login{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh; /* Tornar a seção ocupar 100% da altura da tela */   
-    
 }
 
 .name-quiz, .description-quiz, .tema-cores, .form-container, .btn {
@@ -59,18 +49,3 @@
     margin: 5px 0; 
 }
 
-.botoes-container button[type="submit"] {
-    margin-top: 15px;
-    padding: 5px 10px; 
-    border-radius: 5px; 
-    font-size: 15px; 
-    cursor: pointer; 
-}
-
-.botoes-container button[type="reset"] {
-    margin-top: 15px;
-    padding: 5px 10px; 
-    border-radius: 5px; 
-    font-size: 15px; 
-    cursor: pointer; 
-}
