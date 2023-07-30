@@ -49,3 +49,11 @@
     margin: 5px 0; 
 }
 
+#media-acertos {
+    color:green
+}
+
+#media-erros {
+    color:red
+}
+
