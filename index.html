@@ -28,6 +28,7 @@
             <form class="form-container">
                 <label for="tema">Escolha o Tema:</label>
                 <select id="tema" name="tema">
+                    <option disabled selected value="">Selecione o tema</option>
                     <option value="tema1">Porto Bank</option>
                     <option value="tema2">Porto Saúde</option>
                     <option value="tema3">Porto Auto</option>
@@ -76,23 +77,23 @@
             </table>
 
             <!-- MÉDIA DE ACERTOS/ERROS -->
-            <h4>Média de acertos</h4>
-            <h4>Média de erros</h4>
+            <h4 id="media-acertos">Média de acertos</h4>
+            <h4 id="media-erros">Média de erros</h4>
 
             <!-- CLASSIFICAÇÃO -->
             <h3>Porto Bank</h3>
-            <ol>
+            <ol id="ranking-banking">
             </ol>
 
             <h3>Porto Saúde</h3>
-            <ol>
+            <ol id="ranking-saude">
             </ol>
 
             <h3>Porto Seguro Auto</h3>
-            <ol>
+            <ol id="ranking-seg-auto">
             </ol>
 
-            <button onclick="reiniciarQuiz()">Reiniciar Quiz</button>
+            <button id="btnReiniciaQuiz">Reiniciar Quiz</button>
         </section>
 
         <!-- seção de audio -->
@@ -105,4 +106,5 @@
         <script type="module" src="./script.js"></script>
     </main>
 </body>
+
 </html>
