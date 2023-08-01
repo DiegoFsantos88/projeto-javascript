@@ -91,6 +91,7 @@ function mostrarPerguntas() {
 
 function verificarRespostas() {
 
+
     const respostaContainers = quizContainer.querySelectorAll("ul");
     for (let i = 0; i < temaAtual.length; i++) {
 
@@ -128,7 +129,8 @@ function exibirTabelaResultados() {
     const nomeParticipante = document.getElementById("name").value;
     const temaSelecionadoValue = temaSelecionado.options[temaSelecionado.selectedIndex].text; // Obtém o texto do tema selecionado
     const d = new Date();
-    const dataQuiz = d.toLocaleDateString();
+    const hora = { timeZone: 'America/Sao_Paulo', hour12: false };  //formato da hora
+    const dataHoraFormatada = d.toLocaleString('pt-BR' - hora);
     const tempoTotal = cron.tempoTotal;
 
     const numeroAcertos = score;   //Recebe o numero de acertos
@@ -145,7 +147,7 @@ function exibirTabelaResultados() {
             nome: nomeParticipante,
             tema: temaSelecionadoValue,
             tempo: tempoTotal,
-            data: dataQuiz,
+            data: dataHoraFormatada,
             score: scoreFormatado,
             acertos: parseInt(numeroAcertos),
             totalPerguntas: parseInt(numerototalPerguntas)
@@ -163,12 +165,11 @@ function exibirTabelaResultados() {
         <td>${nomeParticipante}</td>
         <td>${temaSelecionadoValue}</td>
         <td>${tempoTotal}</td>
-        <td>${dataQuiz}</td>
+        <td>${dataHoraFormatada}</td>
         <td>${scoreFormatado}</td>
     `;
-
-
 }
+
 function addEventButtons() {
     ocultaMostraBotoes.iniciar();
     btnContinuar.addEventListener('click', () => {
@@ -176,7 +177,6 @@ function addEventButtons() {
         btnConcluir.style.display = 'none';
         btnContinuar.style.display = 'none';
         btnReiniciar.style.display = 'none';
-        cron.pararQuiz();
         exibirTabelaResultados();
     })
     btnConcluir.addEventListener('click', () => {
@@ -185,6 +185,7 @@ function addEventButtons() {
             btnConcluir.style.display = 'none';
             btnContinuar.style.display = 'block';
             btnReiniciar.style.display = 'none';
+            cron.pararQuiz();
         } else {
             alert("Responda todas as perguntas antes de concluir.");
         }
@@ -207,7 +208,6 @@ function addEventButtons() {
 }
 
 document.addEventListener('DOMContentLoaded', addEventButtons);
-
 
 
 const ocultaMostraBotoes = {
