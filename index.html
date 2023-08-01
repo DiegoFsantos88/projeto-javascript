@@ -28,7 +28,6 @@
             <form class="form-container">
                 <label for="tema">Escolha o Tema:</label>
                 <select id="tema" name="tema">
-                    <option disabled selected value="">Selecione o tema</option>
                     <option value="tema1">Porto Bank</option>
                     <option value="tema2">Porto Saúde</option>
                     <option value="tema3">Porto Auto</option>
@@ -51,16 +50,14 @@
                 <li></li>
                 <li></li>
             </ul>
-            <div id="btnContainer" style="display: none;">
-                <button id="concluir" type="submit">Concluir</button>
-                <button id="reiniciar" type="reset">Reiniciar</button>
-            </div>
-            <button id="continuar" style="display: none;">Continuar</button>
         </section>
-
+        <button type="button" id="btnConcluir">Concluir</button>
+        <button type="button" id="btnContinuar">Continuar</button>
+        <button type="reset" id="btnReiniciar">Reiniciar</button>
+        
 
         <!-- TABELA DE RESULTADOS -->
-        <section class="tabela-resultados" id="tabelaResultados" style="display: none;">
+        <section class="tabela-resultados" id="tabelaResultados">
             <h2>Resultados</h2>
             <table id="resultadoTable">
                 <thead>
@@ -106,5 +103,4 @@
         <script type="module" src="./script.js"></script>
     </main>
 </body>
-
 </html>
