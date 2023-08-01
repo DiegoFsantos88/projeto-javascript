@@ -21,10 +21,10 @@ function carregarPergunta(questions) {
     score = 0;
 }
 
-
-
-function myTimer() { 
-    const d = new Date(); 
+function myTimer() {
+    const d = new Date();
+    d.setSeconds = 0;
+    d.setMinutes = 0;
     const tempoAtual = Math.floor((d.getTime() - cron.tempoInicial) / 1000);
     const minutos = Math.floor(tempoAtual / 60);
     const segundos = tempoAtual % 60;
@@ -33,9 +33,9 @@ function myTimer() {
 }
 
 botaoIniciar.addEventListener("click", function () {
-    cron.iniciarQuiz();
+    ocultaMostraBotoes.quiz();
     const chamarTema = temaSelecionado.value;
-
+    cron.iniciarQuiz();
     switch (chamarTema) {
         case "tema1":
             carregarPergunta(portoBank);
@@ -53,8 +53,6 @@ botaoIniciar.addEventListener("click", function () {
     login.style.display = "none"; //página de login
     mySection.style.display = "block"; //botões
 
-    
-
     mostrarPerguntas();
 });
 
@@ -70,7 +68,6 @@ function perguntasRespondidas() {
     }
     return true; // Todas as perguntas foram respondidas
 }
-
 
 function mostrarPerguntas() {
     let questionsHTML = "";
@@ -88,44 +85,11 @@ function mostrarPerguntas() {
             </div>
         `;
     }
-
-    const resetButton = `<button type="reset" id="resetButton">Reiniciar</button>`;
-    const submitButton = `<button type="button" id="concluir">Concluir</button>`;
-
-    const concluirPergunta = `<button type="button" id="concluirPerguntas">Continuar</button>`;
-    questionsHTML += submitButton + resetButton + concluirPergunta;
     quizContainer.innerHTML = questionsHTML;
-
-    const concluirButton = document.getElementById("concluir"); // selecionar o botão
-    concluirButton.addEventListener("click", function () {
-        if (perguntasRespondidas()) {
-            verificarRespostas();
-        } else {
-            alert("Responda todas as perguntas antes de concluir.");
-        }
-    });
-
-    //logica do botão reinicar
-
-    const botaoConcluir = document.getElementById("concluirPerguntas"); //apaga o botao concluirPergunta
-    botaoConcluir.style.display = "none";
 }
 
 
 function verificarRespostas() {
-
- 
-    cron.pararQuiz();
-
-    const resetButton = document.getElementById("resetButton"); // apaga o botao reiniciar
-    resetButton.style.display = "none";
-
-    const submitButton = document.getElementById("concluir"); // apaga o botao concluir
-    submitButton.style.display = "none";
-
-    const botaoConcluir = document.getElementById("concluirPerguntas"); //faz aparecer o botao continuar
-    botaoConcluir.style.display = "block";
-    botaoConcluir.addEventListener("click", exibirTabelaResultados); // chama a funcao verificar resposta
 
     const respostaContainers = quizContainer.querySelectorAll("ul");
     for (let i = 0; i < temaAtual.length; i++) {
@@ -157,14 +121,14 @@ function totalPerguntas() {
 
 
 function exibirTabelaResultados() {
-    quizContainer.style.display = "none";
-    const tabelaResultados = document.getElementById("tabelaResultados");
-    tabelaResultados.style.display = "block"; // Exibe a tabela de resultados
+    const resultados = document.getElementById('tabelaResultados');
+    resultados.style.display = 'block';
+
 
     const nomeParticipante = document.getElementById("name").value;
     const temaSelecionadoValue = temaSelecionado.options[temaSelecionado.selectedIndex].text; // Obtém o texto do tema selecionado
     const d = new Date();
-    const dataQuiz = d.toLocaleDateString(); 
+    const dataQuiz = d.toLocaleDateString();
     const tempoTotal = cron.tempoTotal;
 
     const numeroAcertos = score;   //Recebe o numero de acertos
@@ -202,26 +166,81 @@ function exibirTabelaResultados() {
         <td>${dataQuiz}</td>
         <td>${scoreFormatado}</td>
     `;
+
+
+}
+function addEventButtons() {
+    ocultaMostraBotoes.iniciar();
+    btnContinuar.addEventListener('click', () => {
+        quizContainer.style.display = 'none';
+        btnConcluir.style.display = 'none';
+        btnContinuar.style.display = 'none';
+        btnReiniciar.style.display = 'none';
+        cron.pararQuiz();
+        exibirTabelaResultados();
+    })
+    btnConcluir.addEventListener('click', () => {
+        if (perguntasRespondidas()) {
+            verificarRespostas();
+            btnConcluir.style.display = 'none';
+            btnContinuar.style.display = 'block';
+            btnReiniciar.style.display = 'none';
+        } else {
+            alert("Responda todas as perguntas antes de concluir.");
+        }
+    })
+    btnReiniciar.addEventListener('click', () => {
+        login.style.display = 'block';
+        ocultaMostraBotoes.iniciar();
+        cron.pararQuiz();
+        document.getElementById("name").value = '';
+
+        quizContainer.style.display = "none"; // Exibe a tabela de resultados  
+    })
+    const btnReiniciaQuiz = document.getElementById("btnReiniciaQuiz");
+    btnReiniciaQuiz.addEventListener("click", () => {
+        tabelaResultados.style.display = "none";
+        login.style.display = "block";
+        document.getElementById("name").value = '';
+        ranking.removerPessoaRanking();//incluido chamada a funcao de remover elementos do DOM
+    });
 }
 
-const continuarButton = document.getElementById("continuar");
-continuarButton.addEventListener("click", function () {
-    // Esconde as perguntas e mostra a tabela de resultados
-    mySection.style.display = "none";
-    const tabelaResultados = document.getElementById("tabelaResultados");
-    tabelaResultados.style.display = "block";
-});
+document.addEventListener('DOMContentLoaded', addEventButtons);
 
 
 
+const ocultaMostraBotoes = {
+    iniciar: () => {
+        btnContinuar.style.display = 'none';
+        btnReiniciar.style.display = 'none';
+        btnConcluir.style.display = 'none';
+        const tabelaResultados = document.getElementById("tabelaResultados");
+        tabelaResultados.style.display = "none"; // Exibe a tabela de resultados
 
-btnReiniciaQuiz.addEventListener("click", () => {  
-    tabelaResultados.style.display = "none";
-    login.style.display = "block";
-    const nomeParticipante = document.getElementById("name");
-    nomeParticipante.value = '';
-    ranking.removerPessoaRanking();//incluido chamada a funcao de remover elementos do DOM
-});
+    },
+    quiz: () => {
+        btnReiniciar.style.display = 'block';
+        btnConcluir.style.display = 'block';
+    }
+}
+
+const cron = {
+    tempoInicial: 0, // Tempo inicial do Cronômetro
+    tempoTotal: '',
+    iniciarQuiz: () => {
+        clearInterval(cron.tempoInicial);
+        setInterval(myTimer, 1000);
+        const cronometro = document.getElementById("cronometro");
+        cronometro.style.display = "block"; // Exibe o cronometro
+        cron.tempoInicial = new Date().getTime();
+    },
+    pararQuiz: () => {
+        const cronometro = document.getElementById("cronometro");
+        cronometro.style.display = "none"; // Oculta o cronometro
+        cron.tempoTotal = document.getElementById("cronometro").innerText;
+    }
+}
 
 /** RANKING **/
 const ranking = {
@@ -282,37 +301,13 @@ const participantes = {
 
 /** ESTATÍSTICAS **/
 const estatisticas = {
-    mediaAcertos: () => (participantes.pessoas
+    mediaAcertos: () => participantes.pessoas
         .map(p => p.acertos)//faz p mapeamento dos acertos
-        .reduce((a, b) => a + b) / participantes.pessoas.length).toFixed(1), // soma o total de acertos e divide pelos participantes
-    mediaErros: () => (participantes.pessoas
+        .reduce((a, b) => a + b) / participantes.pessoas.length, // soma o total de acertos e divide pelos participantes
+    mediaErros: () => participantes.pessoas
         .map(p => p.totalPerguntas - p.acertos) //faz p mapeamento dos acertos
-        .reduce((a, b) => a + b) / participantes.pessoas.length).toFixed(1)
+        .reduce((a, b) => a + b) / participantes.pessoas.length
 } // soma o total de acertos e divide pelos participantes
-
-
-const cron = {
-    tempoInicial: 0, // Tempo inicial do Cronômetro
-    tempoTotal: '',
-    iniciarQuiz: () => {
-        clearInterval(cron.tempoInicial);
-        setInterval(myTimer, 1000);
-        const cronometro = document.getElementById("cronometro");
-        cronometro.style.display = "block"; // Exibe o cronometro
-        cron.tempoInicial = new Date().getTime();
-    },
-    pararQuiz: () => {
-        const cronometro = document.getElementById("cronometro");
-        cronometro.style.display = "none"; // Oculta o cronometro
-        cron.tempoTotal = document.getElementById("cronometro").innerText;
-    }
-}
-
-
-
-
-
-
 
 // ----- Áudio da página
 // const audio = document.getElementById("audio");
