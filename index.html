@@ -9,34 +9,45 @@
 </head>
 
 <body>
+    <div class="pop-up">
+        <a>
+        <img id="toggle-mode" width="24" height="24" src="https://img.icons8.com/external-gradak-royyan-wijaya/24/external-dark-gradak-weather-gradak-royyan-wijaya-3.png" alt="external-dark-gradak-weather-gradak-royyan-wijaya-3"/>
+        </a>
+        <img src="" alt="">
+            <audio id="audio" controls loop>
+            <img width="50" height="50" src="https://img.icons8.com/ios/50/play--v1.png" alt="play--v1"/>
+                <source src="./audio/audio-6.mp3" type="audio/mpeg">
+            </audio>
+    </div>
     <main>
         <!-- Página de Login -->
-        <section class="login" id="login">
-            <h2 class="name-quiz">Quiz Porto</h2>
-            <p class="description-quiz">
-                Neste quiz vamos abordar perguntas e respostas sobre
-                áreas da Porto seguro.
-            </p>
-            <div class="tema-cores">
-                <label for="theme-switch">Modo Black</label>
-                <input type="checkbox" id="theme-switch">
-            </div>
-            <form class="form-container" action="#" method="post">
-                <label for="name">Nome:</label>
-                <input type="text" id="name" name="name" required>
-            </form>
-            <form class="form-container">
-                <label for="tema">Escolha o Tema:</label>
-                <select id="tema" name="tema">
-                    <option value="tema1">Porto Bank</option>
-                    <option value="tema2">Porto Saúde</option>
-                    <option value="tema3">Porto Auto</option>
-                </select>
-            </form>
-            <div class="btn">
-                <input type="button" value="Iniciar" id="botaoIniciar">
-            </div>
-        </section>
+            <section class="login" id="login">
+                <div class="logo-porto">
+                    <img  src="https://neofeed.com.br/wp-content/uploads/2022/04/Nova-Logo_PortoHolding.png">
+                </div>
+                <p class="sobre-quiz">
+                    Você conhece todos os produtos da Porto?<br>
+                    Responda esse Quiz e teste os seus conhecimentos.<br>
+                    Todo cuidado é <u>Porto!</u>
+                </p>
+                <form class="form-container" action="#" method="post">
+                    <label for="name">Nome:</label>
+                    <input type="text" id="name" name="name" required>
+    
+                    <label for="tema">Escolha o Tema:</label>
+                    <select id="tema" name="tema">
+                        <option disabled selected value="">Selecione o tema</option>
+                        <option value="tema1">Porto Bank</option>
+                        <option value="tema2">Porto Saúde</option>
+                        <option value="tema3">Porto Auto</option>
+                    </select>
+    
+                    <div class="btn">
+                        <input type="button" value="Iniciar" id="botaoIniciar">
+                    </div>
+                    
+                </form>
+            </section>
 
         <!-- CRONOMETRO -->
         <div id="cronometro"></div>
@@ -57,9 +68,10 @@
         
 
         <!-- TABELA DE RESULTADOS -->
-        <section class="tabela-resultados" id="tabelaResultados">
+        <section id="tabelaResultados">
+        <div class="tabela-estilo">
             <h2>Resultados</h2>
-            <table id="resultadoTable">
+            <table  id="resultadoTable">
                 <thead>
                     <tr>
                         <th>Nome</th>
@@ -72,7 +84,7 @@
                 <tbody>
                 </tbody>
             </table>
-
+        </div>
             <!-- MÉDIA DE ACERTOS/ERROS -->
             <h4 id="media-acertos">Média de acertos</h4>
             <h4 id="media-erros">Média de erros</h4>
@@ -92,14 +104,6 @@
 
             <button id="btnReiniciaQuiz">Reiniciar Quiz</button>
         </section>
-
-        <!-- seção de audio -->
-        <section>
-            <audio id="audio" controls loop>
-                <source src="./audio/audio-6.mp3" type="audio/mpeg">
-            </audio>
-        </section>
-
         <script type="module" src="./script.js"></script>
     </main>
 </body>

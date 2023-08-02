@@ -12,7 +12,19 @@ const login = document.getElementById("login");
 const mySection = document.getElementById("quizContainer");
 mySection.style.display = "none";
 
-
+// Função para alternar entre os temas black e light
+function toggleTheme(TemaDarkLight) {
+    const body = document.body;
+    // Se a classe light-mode estiver presente no body, troca para black-mode
+    if (body.classList.contains("light-mode")) {
+    body.classList.remove("light-mode");
+    body.classList.add("black-mode");
+    } else {
+      // Caso contrário, troca para light-mode
+    body.classList.remove("black-mode");
+    body.classList.add("light-mode");
+    }
+}
 let temaAtual = [];
 let score = 0;
 
@@ -51,7 +63,7 @@ botaoIniciar.addEventListener("click", function () {
     }
 
     login.style.display = "none"; //página de login
-    mySection.style.display = "block"; //botões
+    mySection.style.display = "flex"; //botões
 
     mostrarPerguntas();
 });
@@ -123,7 +135,7 @@ function totalPerguntas() {
 
 function exibirTabelaResultados() {
     const resultados = document.getElementById('tabelaResultados');
-    resultados.style.display = 'block';
+    resultados.style.display = 'block'; // manter como blok para não quebrar a tabela 
 
 
     const nomeParticipante = document.getElementById("name").value;
@@ -183,7 +195,7 @@ function addEventButtons() {
         if (perguntasRespondidas()) {
             verificarRespostas();
             btnConcluir.style.display = 'none';
-            btnContinuar.style.display = 'block';
+            btnContinuar.style.display = 'flex';
             btnReiniciar.style.display = 'none';
             cron.pararQuiz();
         } else {
@@ -191,7 +203,7 @@ function addEventButtons() {
         }
     })
     btnReiniciar.addEventListener('click', () => {
-        login.style.display = 'block';
+        login.style.display = 'flex';
         ocultaMostraBotoes.iniciar();
         cron.pararQuiz();
         document.getElementById("name").value = '';
@@ -201,7 +213,7 @@ function addEventButtons() {
     const btnReiniciaQuiz = document.getElementById("btnReiniciaQuiz");
     btnReiniciaQuiz.addEventListener("click", () => {
         tabelaResultados.style.display = "none";
-        login.style.display = "block";
+        login.style.display = "flex";
         document.getElementById("name").value = '';
         ranking.removerPessoaRanking();//incluido chamada a funcao de remover elementos do DOM
     });
@@ -220,8 +232,8 @@ const ocultaMostraBotoes = {
 
     },
     quiz: () => {
-        btnReiniciar.style.display = 'block';
-        btnConcluir.style.display = 'block';
+        btnReiniciar.style.display = 'flex';
+        btnConcluir.style.display = 'flex';
     }
 }
 
@@ -232,7 +244,7 @@ const cron = {
         clearInterval(cron.tempoInicial);
         setInterval(myTimer, 1000);
         const cronometro = document.getElementById("cronometro");
-        cronometro.style.display = "block"; // Exibe o cronometro
+        cronometro.style.display = "flex"; // Exibe o cronometro
         cron.tempoInicial = new Date().getTime();
     },
     pararQuiz: () => {
@@ -285,10 +297,18 @@ const ranking = {
         };
     },
 
+    // removerPessoaRanking: () => {
+    //     for (const pessoa of participantes.pessoas) {
+    //         const el = document.getElementById(ranking.gerarId(pessoa))//pega o elemento pelo "gerarId"
+    //         el.remove();//remove elemento
+    //     };
+    // }
     removerPessoaRanking: () => {
         for (const pessoa of participantes.pessoas) {
-            const el = document.getElementById(ranking.gerarId(pessoa))//pega o elemento pelo "gerarId"
-            el.remove();//remove elemento
+            const el = document.getElementById(ranking.gerarId(pessoa));
+            if (el) {
+                el.remove();
+            }
         };
     }
 }
@@ -319,3 +339,12 @@ const estatisticas = {
 
 // const volumeDesejado = 0.15;
 // audio.volume = volumeDesejado
+
+function toggleDarkMode() {
+    const body = document.body;
+    body.classList.toggle('dark-mode'); // Adicione ou remova a classe 'dark-mode' ao body
+}
+
+  // Evento de clique no botão para alternar o modo
+    const botaoDark = document.getElementById('toggle-mode');
+    botaoDark.addEventListener('click', toggleDarkMode);
