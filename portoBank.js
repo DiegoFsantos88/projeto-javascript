@@ -84,7 +84,7 @@ export const portoBank = [
     respostaA:
       "Crédito Astral: Nesta solução de crédito, os clientes podem solicitar empréstimos com base em sua posição astrológica.",
     respostaB:
-      "Crédito Alquímico: Nessa modalidade de crédito, os clientes podem solicitar empréstimos para financiar experimentos alquímicos e transformar metais comuns em ouro.",
+      "Crédito Alquímico: Nessa modalidade de crédito, os clientes podem solicitar empréstimos para financiar experimentos alquímicos.",
     respostaC:
       "A Porto Bank oferece diversas opções de Empréstimos e Financiamento de Veículo.",
     respostaD:

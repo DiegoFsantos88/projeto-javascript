@@ -32,7 +32,7 @@ body {
 }
 .sobre-quiz{
     text-align: center;
-    font-size: 25px;
+    font-size: 22px;
     line-height: 35px;
 }
 
@@ -43,8 +43,8 @@ body {
     justify-content: center;
     padding: 20px;
     border-radius: 8px;
-    max-width: 700px;
-    margin: 50px auto;
+    max-width: 600px;
+    margin: 5px auto;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
     background-color: #007bff65;   
     line-height: 25px;
@@ -60,7 +60,7 @@ body {
 
 #tema, input{
     border-radius: 20px;
-    height: 25px;
+    height: 18px;
 }
 
 
@@ -73,7 +73,7 @@ body {
     display: flex;
     padding: 10px;
     margin: 10px 0px 10px;
-    font-size: 25px;
+    font-size: 22px;
     
 }
 
@@ -98,6 +98,8 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    font-family: 'Open Sans', sans-serif;
+    text-align: justify;
 }
 
 .perguntas h1 {
@@ -114,6 +116,7 @@ body {
 .perguntas ul {
     list-style: none; 
     margin: 0;
+    border-radius: 8px;  
 }
 
 .perguntas ul li {
@@ -121,15 +124,212 @@ body {
 }
 
 #media-acertos {
-    color:rgb(0, 128, 0)
+    color:rgb(0, 128, 0);
 }
 
 #media-erros {
-    color:rgb(255, 0, 0)
+    color:rgb(255, 0, 0);
 }
 
 .musica-quiz{
     display: flex;
     justify-content: baseline;
     
+}
+
+.tabela-classificacao {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 50px;
+}
+
+.media {
+    margin-left: 50px;
+}
+
+#btnConcluir {
+    background-color: rgba(0, 123, 255, 0.38);
+    color: rgb(255, 255, 255);
+    border-radius: 20px;
+    font-size: 21px;
+    cursor: pointer;
+    width: 98px;
+    height: 32px;
+}
+
+#btnReiniciar {
+    background-color: rgba(0, 123, 255, 0.38);
+    color: rgb(255, 255, 255);
+    border-radius: 20px;
+    font-size: 21px;
+    cursor: pointer;
+    width: 98px;
+    height: 32px;
+}
+
+#btnContinuar {
+    background-color: rgba(0, 123, 255, 0.38);
+    color: rgb(255, 255, 255);
+    border-radius: 20px;
+    font-size: 21px;
+    cursor: pointer;
+    width: 110px;
+    height: 32px;
+}
+
+/* estilo das perguntas */
+#btnReiniciaQuiz {
+    background-color: rgba(0, 123, 255, 0.38);
+    color: rgb(255, 255, 255);
+    border-radius: 20px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 120px;
+    height: 38px;
+    margin: 10px;
+}
+
+#quizContainer{
+    padding: 70px;
+}
+
+.perguntasGeradas{
+    background-color: #007bff65;
+    width: 100%;
+    margin: 15px 0 ;
+    border-radius: 20px;
+}
+
+.perguntasGeradas ul{
+    padding: 10px;
+}
+
+.perguntasGeradas p{
+    margin: 20px;
+}
+
+#btnConcluir {
+    margin: 5px;
+    width: auto;
+}
+
+#btnReiniciar{
+    margin: 5px;
+    width: auto;
+}
+
+/* tabela */
+.tabela-estilo th, td{
+    text-align: center;
+    border: 1px solid black;
+    padding: 3px 5px;  
+    white-space: nowrap;  
+    font-family: 'Open Sans', sans-serif;
+}
+
+.tabela-estilo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.tabela-estilo table{
+    width: 70%; /* Defina a largura desejada para a tabela */
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.tabela-estilo h2{
+    display: block;
+    padding: 10px;
+}
+
+.tabela-estilo  th,
+.tabela-estilo  td {
+    padding: 8px;
+}
+
+.tabela-estilo th {
+    background-color: #007bff65;
+}
+
+.tabela-estilo  tbody tr:nth-child(even) {
+    background-color: #007bff65;
+}
+
+.tabela-estilo tbody tr:hover {
+    background-color: #007bff65;
+}
+
+#btnConcluir:hover {
+    background-color: #007bff;
+    transition: 1s;
+}
+
+#btnReiniciar:hover {
+    background-color: #007bff;
+    transition: 1s;
+}
+
+#btnContinuar:hover {
+    background-color: #007bff;
+    transition: 1s;
+}
+
+#btnReiniciaQuiz:hover {
+    background-color: #007bff;
+    transition: 1s;
+}
+/* fim da tabela */
+
+#tabelaResultados{
+    text-align: center;
+    display: flex;
+}
+
+#media-acertos, #media-erros{
+    display: inline-block;
+    justify-content: center;
+    margin: 50px 0px;
+}
+
+#tabelaResultados h3{
+    margin: 40px 0 5px 80px;
+    justify-content: start;
+    text-align: start;
+}
+
+#tabelaResultados li{
+    text-align: initial;
+}
+
+#tabelaResultados h4{
+    font-size: 20px;
+    margin: 50px;
+}
+
+/* div Resultado */
+#divResultados{
+    margin: 20px 0px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* divBtns */
+#divBtns{
+    display: flex;
+    justify-content: center;
+    margin: 0 0 30px 0;
+}
+
+#cronometro {
+    border: 2px double #007bff;
+    max-width: 50px;
+    margin-left: 10px;
+    justify-content: center;
+    border-radius: 5px;
 }

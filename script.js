@@ -45,28 +45,27 @@ function myTimer() {
 }
 
 botaoIniciar.addEventListener("click", function () {
-    ocultaMostraBotoes.quiz();
-    const chamarTema = temaSelecionado.value;
-    cron.iniciarQuiz();
-    switch (chamarTema) {
-        case "tema1":
-            carregarPergunta(portoBank);
-            break;
-        case "tema2":
-            carregarPergunta(portoSaude);
-            break;
-        case "tema3":
-            carregarPergunta(portoSeguroAuto);
-            break;
-        default:
-            break;
-    }
+        ocultaMostraBotoes.quiz();
+        const chamarTema = temaSelecionado.value;
+        cron.iniciarQuiz();
+        switch (chamarTema) {
+            case "tema1":
+                carregarPergunta(portoBank);
+                break;
+            case "tema2":
+                carregarPergunta(portoSaude);
+                break;
+            case "tema3":
+                carregarPergunta(portoSeguroAuto);
+                break;
+            default:
+                break;
+        }
+        login.style.display = "none"; //página de login
+        mySection.style.display = "flex"; //botões
+        mostrarPerguntas();
+    });
 
-    login.style.display = "none"; //página de login
-    mySection.style.display = "flex"; //botões
-
-    mostrarPerguntas();
-});
 
 //Verificar se todas as perguntas foram respondidas
 function perguntasRespondidas() {
@@ -86,7 +85,7 @@ function mostrarPerguntas() {
     for (let i = 0; i < temaAtual.length; i++) {
         const question = temaAtual[i];
         questionsHTML += `
-            <div>
+            <div class="perguntasGeradas">
                 <p>${question.pergunta}</p>
                 <ul>
                     <li><label><input type="radio" name="answer${i}" value="A">${question.respostaA}</label></li>
@@ -117,10 +116,10 @@ function verificarRespostas() {
             if (botaoSelecionado) {
                 const valorSelecionado = botaoSelecionado.value.toLowerCase();
                 if (valorSelecionado === questao.respostaCorreta.toLowerCase()) {
-                    respostaContainer.style.backgroundColor = "green";
+                    respostaContainer.style.backgroundColor = "rgb(157, 232, 157)";
                     score++;
                 } else {
-                    respostaContainer.style.backgroundColor = "red";
+                    respostaContainer.style.backgroundColor = "rgb(236, 128, 128)";
                 }
             }
         }
