@@ -28,7 +28,7 @@
                 <p class="sobre-quiz">
                     Você conhece todos os produtos da Porto?<br>
                     Responda esse Quiz e teste os seus conhecimentos.<br>
-                    Todo cuidado é <u>Porto!</u>
+                    Todo cuidado é <u>Porto!</u>
                 </p>
                 <form class="form-container" action="#" method="post">
                     <label for="name">Nome:</label>
@@ -36,7 +36,7 @@
     
                     <label for="tema">Escolha o Tema:</label>
                     <select id="tema" name="tema">
-                        <option disabled selected value="">Selecione o tema</option>
+                        <option disabled selected value="tema0">Selecione o tema</option>
                         <option value="tema1">Porto Bank</option>
                         <option value="tema2">Porto Saúde</option>
                         <option value="tema3">Porto Auto</option>
@@ -62,10 +62,11 @@
                 <li></li>
             </ul>
         </section>
-        <button type="button" id="btnConcluir">Concluir</button>
-        <button type="button" id="btnContinuar">Continuar</button>
-        <button type="reset" id="btnReiniciar">Reiniciar</button>
-        
+        <div id="divBtns">
+            <button type="button" id="btnConcluir">Concluir</button>
+            <button type="button" id="btnContinuar">Continuar</button>
+            <button type="reset" id="btnReiniciar">Reiniciar</button>
+        </div>
 
         <!-- TABELA DE RESULTADOS -->
         <section id="tabelaResultados">
@@ -90,19 +91,24 @@
             <h4 id="media-erros">Média de erros</h4>
 
             <!-- CLASSIFICAÇÃO -->
-            <h3>Porto Bank</h3>
-            <ol id="ranking-banking">
-            </ol>
-
-            <h3>Porto Saúde</h3>
-            <ol id="ranking-saude">
-            </ol>
-
-            <h3>Porto Seguro Auto</h3>
-            <ol id="ranking-seg-auto">
-            </ol>
-
-            <button id="btnReiniciaQuiz">Reiniciar Quiz</button>
+        <div id="divResultados">
+            <div class="box1">                
+                <img src="imagens/logo-home-portobank.jpeg" alt="logo-porto-bank">
+                <ol id="ranking-banking">
+                </ol>
+            </div>
+            <div class="box1">                
+                <img src="imagens/logo-home-portosaude.jpeg" alt="logo-porto-saude">
+                <ol id="ranking-saude">
+                </ol>
+            </div>
+            <div class="box1">                
+                <img src="imagens/logo-home-portoseguro.jpeg" alt="logo-home-portoauto">
+                <ol id="ranking-seg-auto">
+                </ol>
+            </div>
+        </div>
+            <button id="btnReiniciaQuiz">Reiniciar</button>
         </section>
         <script type="module" src="./script.js"></script>
     </main>
