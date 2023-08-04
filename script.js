@@ -2,15 +2,14 @@ import { portoBank } from "./portoBank.js";
 import { portoSaude } from "./portoSaude.js";
 import { portoSeguroAuto } from "./portoSeguroAuto.js";
 
-
-
 const botaoIniciar = document.getElementById("botaoIniciar");
 const temaSelecionado = document.getElementById("tema");
 const quizContainer = document.getElementById("quizContainer");
 const login = document.getElementById("login");
-
 const mySection = document.getElementById("quizContainer");
 mySection.style.display = "none";
+const areaCronometro = document.getElementById("cronometro");
+areaCronometro.style.display = "none";
 
 // Função para alternar entre os temas black e light
 function toggleTheme(TemaDarkLight) {
@@ -45,10 +44,22 @@ function myTimer() {
 }
 
 botaoIniciar.addEventListener("click", function () {
-        ocultaMostraBotoes.quiz();
+    // Obter o valor do campo obrigatório
+    var campoObrigatorio = document.getElementById("name").value;
+    // Verificar se o campo está vazio
+    if (campoObrigatorio.trim() === "") {
+        alert("Por favor, digite seu nome!");
+        return;
+    }
+    chamarTema();
+});
+
+    function chamarTema() {
         const chamarTema = temaSelecionado.value;
-        cron.iniciarQuiz();
         switch (chamarTema) {
+            case "tema0":
+                alert("Selecione algum tema para iniciar o quiz!");
+                return;
             case "tema1":
                 carregarPergunta(portoBank);
                 break;
@@ -61,10 +72,13 @@ botaoIniciar.addEventListener("click", function () {
             default:
                 break;
         }
+        ocultaMostraBotoes.quiz();
+        cron.iniciarQuiz();
         login.style.display = "none"; //página de login
         mySection.style.display = "flex"; //botões
         mostrarPerguntas();
-    });
+    };
+
 
 
 //Verificar se todas as perguntas foram respondidas
@@ -101,8 +115,6 @@ function mostrarPerguntas() {
 
 
 function verificarRespostas() {
-
-
     const respostaContainers = quizContainer.querySelectorAll("ul");
     for (let i = 0; i < temaAtual.length; i++) {
 
@@ -135,15 +147,12 @@ function totalPerguntas() {
 function exibirTabelaResultados() {
     const resultados = document.getElementById('tabelaResultados');
     resultados.style.display = 'block'; // manter como blok para não quebrar a tabela 
-
-
     const nomeParticipante = document.getElementById("name").value;
     const temaSelecionadoValue = temaSelecionado.options[temaSelecionado.selectedIndex].text; // Obtém o texto do tema selecionado
     const d = new Date();
     const hora = { timeZone: 'America/Sao_Paulo', hour12: false };  //formato da hora
     const dataHoraFormatada = d.toLocaleString('pt-BR' - hora);
     const tempoTotal = cron.tempoTotal;
-
     const numeroAcertos = score;   //Recebe o numero de acertos
     const numerototalPerguntas = totalPerguntas(); //Recebe a quantidade de perguntas
     const scoreFormatado = `${numeroAcertos}/${numerototalPerguntas}`; //Formata o score
@@ -296,12 +305,6 @@ const ranking = {
         };
     },
 
-    // removerPessoaRanking: () => {
-    //     for (const pessoa of participantes.pessoas) {
-    //         const el = document.getElementById(ranking.gerarId(pessoa))//pega o elemento pelo "gerarId"
-    //         el.remove();//remove elemento
-    //     };
-    // }
     removerPessoaRanking: () => {
         for (const pessoa of participantes.pessoas) {
             const el = document.getElementById(ranking.gerarId(pessoa));
@@ -320,24 +323,24 @@ const participantes = {
 
 /** ESTATÍSTICAS **/
 const estatisticas = {
-    mediaAcertos: () => participantes.pessoas
+    mediaAcertos: () => (participantes.pessoas
         .map(p => p.acertos)//faz p mapeamento dos acertos
-        .reduce((a, b) => a + b) / participantes.pessoas.length, // soma o total de acertos e divide pelos participantes
-    mediaErros: () => participantes.pessoas
+        .reduce((a, b) => a + b) / participantes.pessoas.length).toFixed(2), // soma o total de acertos e divide pelos participantes
+    mediaErros: () => (participantes.pessoas
         .map(p => p.totalPerguntas - p.acertos) //faz p mapeamento dos acertos
-        .reduce((a, b) => a + b) / participantes.pessoas.length
+        .reduce((a, b) => a + b) / participantes.pessoas.length).toFixed(2)
 } // soma o total de acertos e divide pelos participantes
 
 // ----- Áudio da página
-// const audio = document.getElementById("audio");
-// audio.addEventListener("ended", function () {
-//   this.currentTime = 0;
-//   this.play();
-// });
-// audio.play();
+    const audio = document.getElementById("audio");
+    audio.addEventListener("ended", function () {
+    this.currentTime = 0;
+    this.play();
+    });
+    audio.play();
 
-// const volumeDesejado = 0.15;
-// audio.volume = volumeDesejado
+const volumeDesejado = 0.15;
+audio.volume = volumeDesejado
 
 function toggleDarkMode() {
     const body = document.body;
