@@ -327,9 +327,11 @@ body {
 }
 
 #cronometro {
-    border: 2px double #007bff;
-    max-width: 50px;
-    margin-left: 10px;
+    margin: 10px 50px;
+    padding: 8px;
+    border: 3px solid #ff0000;
+    width: 50px;
     justify-content: center;
-    border-radius: 5px;
+    border-radius: 8px;
+    font-size: 15px;
 }
